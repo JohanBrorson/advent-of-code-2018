@@ -1,0 +1,16 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "Advent of Code 2018",
+  "repository": "git@github.com:JohanBrorson/advent-of-code-2018.git",
+  "author": "Johan Brorson",
+  "license": "MIT",
+
+  "scripts": {
+    "test": "jest"
+  },
+
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
