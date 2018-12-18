@@ -1,6 +1,6 @@
 function hasLettersRepeatedTwoOrThreeTimes(letters) {
   var unique = letters.split('').reduce((total, letter) => {
-    total[letter] ? total[letter]++ : total[letter] = 1;
+    total[letter] ? total[letter]++ : (total[letter] = 1);
     return total;
   }, {});
 
@@ -21,20 +21,22 @@ function multiplyElements(array) {
 function getChecksum(array) {
   return multiplyElements(
     sumElementsAtSameIndex(
-      array.map(letters => hasLettersRepeatedTwoOrThreeTimes(letters))
-    )
+      array.map(letters => hasLettersRepeatedTwoOrThreeTimes(letters)),
+    ),
   );
 }
 
 function getCommonLetters(str1, str2) {
-  var commonLetters = "";
-  str1.split('').forEach((c, i) => { if(str2[i] === c) commonLetters += c });
+  var commonLetters = '';
+  str1.split('').forEach((c, i) => {
+    if (str2[i] === c) commonLetters += c;
+  });
   return commonLetters;
 }
 
 function getCommonLettersFromElementsWithOneDifferentCharacter(array) {
   var commonLetters;
-  while(array.length && commonLetters === undefined) {
+  while (array.length && commonLetters === undefined) {
     var currentElement = array.shift();
     array.some(element => {
       var letters = getCommonLetters(currentElement, element);
@@ -53,5 +55,5 @@ module.exports = {
   multiplyElements,
   getChecksum,
   getCommonLetters,
-  getCommonLettersFromElementsWithOneDifferentCharacter
+  getCommonLettersFromElementsWithOneDifferentCharacter,
 };
