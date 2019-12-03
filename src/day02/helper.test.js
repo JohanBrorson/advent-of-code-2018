@@ -19,7 +19,15 @@ describe('Day 2', () => {
       'abcdee',
       'ababab',
     ];
-    const expected = [[0, 0], [1, 1], [1, 0], [0, 1], [1, 0], [1, 0], [0, 1]];
+    const expected = [
+      [0, 0],
+      [1, 1],
+      [1, 0],
+      [0, 1],
+      [1, 0],
+      [1, 0],
+      [0, 1],
+    ];
 
     test('abcdef contains no letters that appear exactly two or three times', () => {
       expect(hasLettersRepeatedTwoOrThreeTimes(letters[0])).toEqual(
