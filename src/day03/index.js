@@ -8,7 +8,7 @@ var input = fs
   .readFileSync(path.join(__dirname, 'input.txt'))
   .toString()
   .split('\n')
-  .filter(function(word) {
+  .filter(function (word) {
     return word !== '';
   });
 

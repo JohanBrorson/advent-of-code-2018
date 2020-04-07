@@ -21,7 +21,7 @@ function multiplyElements(array) {
 function getChecksum(array) {
   return multiplyElements(
     sumElementsAtSameIndex(
-      array.map(letters => hasLettersRepeatedTwoOrThreeTimes(letters)),
+      array.map((letters) => hasLettersRepeatedTwoOrThreeTimes(letters)),
     ),
   );
 }
@@ -38,7 +38,7 @@ function getCommonLettersFromElementsWithOneDifferentCharacter(array) {
   var commonLetters;
   while (array.length && commonLetters === undefined) {
     var currentElement = array.shift();
-    array.some(element => {
+    array.some((element) => {
       var letters = getCommonLetters(currentElement, element);
       if (currentElement.length - letters.length === 1) {
         commonLetters = letters;
