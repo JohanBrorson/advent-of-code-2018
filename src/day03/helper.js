@@ -12,7 +12,7 @@ function getClaimedArea(claim) {
 }
 
 function getNumberOfOverlappingClaims(claims) {
-  var areas = claims.map(claim => getClaimedArea(claim));
+  var areas = claims.map((claim) => getClaimedArea(claim));
 
   var areasWithNumberOfClaims = areas
     .reduce((accumulator, currentValue) => accumulator.concat(currentValue), [])
@@ -22,12 +22,13 @@ function getNumberOfOverlappingClaims(claims) {
       return map;
     }, {});
 
-  return Object.values(areasWithNumberOfClaims).filter(element => element >= 2)
-    .length;
+  return Object.values(areasWithNumberOfClaims).filter(
+    (element) => element >= 2,
+  ).length;
 }
 
 function getClaimWithNoOverlap(claims) {
-  let areas = claims.map(claim => getClaimedArea(claim));
+  let areas = claims.map((claim) => getClaimedArea(claim));
 
   let areasWithNumberOfClaims = areas
     .reduce((accumulator, currentValue) => accumulator.concat(currentValue), [])
@@ -39,9 +40,9 @@ function getClaimWithNoOverlap(claims) {
 
   let claimNumber = 0;
   let claimWithoutOverlap;
-  areas.forEach(claim => {
+  areas.forEach((claim) => {
     claimNumber++;
-    let hasClaimWithNoOverlap = claim.every(value => {
+    let hasClaimWithNoOverlap = claim.every((value) => {
       return areasWithNumberOfClaims[JSON.stringify(value)] === 1;
     });
     if (hasClaimWithNoOverlap) {

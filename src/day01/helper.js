@@ -1,5 +1,5 @@
 function sum(startValue, values) {
-  return values.reduce(function(a, b) {
+  return values.reduce(function (a, b) {
     return a + b;
   }, startValue);
 }
